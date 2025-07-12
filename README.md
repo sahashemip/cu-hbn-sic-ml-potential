@@ -1,29 +1,32 @@
-## Defective hBN/SiC Heterostructure using VASP-NEP-GPUMD
+# Defective hBN/SiC Heterostructure using VASP-NEP-GPUMD
 
 This project provides a guide for developing **machine learning interatomic potentials (MLIP)** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
 
 This developed potential can be used to 
 (i) assess the stability of the two-dimensional hBN/SiC heterostructure,
-(ii) elucidate **Si–N bond formation** triggered by a boron vacancy (\$\mathrm{V\_B}\$),
-and (iii) investigate the behaviour of Cu adatoms on the defective hBN/SiC surface.
+(ii) elucidate **Si–N bond formation** triggered by a boron vacancy (\$V_\mathrm{B}\$),
+and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC surface.
 
 ---
 
-### Database Compilation
+<p>
+  <img src="figures/fig1.png"
+    alt="The hBN/SiC heterostructure. Unique $\rm{V}_{\rm{B}}$ sites are determined by red circles."
+    width="410"
+    align="right"
+  >
+</p>
+
+## Database Compilation
 
 Detailed instructions are provided for building a robust database (DB).
-Density-functional theory (DFT) calculations were carried out with the [Vienna Ab-initio Simulation Package (VASP)](https://www.vasp.at/).
-
+[Density-functional theory (DFT)](https://www.synopsys.com/glossary/what-is-density-functional-theory.html) calculations were performed with the [Vienna Ab-initio Simulation Package (VASP)](https://www.vasp.at/) to obtain the total energy, atomic forces, and virial stress for each geometry.
+Defects are introduced into a supercell containg 100 boron (B), 100 nitrogen (N), 64 silicon (Si), and 64 carbon (C) atoms.
+Detailed information on the geometries and structures used to construct a stable interatomic potential is provided below.
 
 #### 1. Boron Vacancy ($\rm{V}_{\rm{B}}$) Defects
-- **Lattice mismatch** results in 15 unique $\rm{V}_{\rm{B}}$ defects in the heterostrcuture's supercell.
-<div align="center">
-  <img src="figures/fig1.png" alt="The hBN/SiC heterostructure. Unique $\rm{V}_{\rm{B}}$ sites are determined by red circles." width="400">
-</div>
-- To enrich the DB, all unique defects were created, and their geometries were optimized using [density functional theory](https://www.synopsys.com/glossary/what-is-density-functional-theory.html) implemented in VASP software.
-- Depending on the VB site, various numbers of local chemical bonds (ranging from 0 to 4) are formed.
-- **DFT Calculations:** conducted using **VASP** to generate `XDATCAR` files.
-- Use the script `vasp_structure_rattler_deformer.py` with `--max_strain 0.05` and `--max_amplitude 0.2` to generate `POSCAR` files from XDATCARs.
+**Lattice mismatch** lead to 15 symmetry-distinct \$V_\mathrm{B}\$ defects in the heterostrcuture supercell, marked by the red circles in the figure. All unique defects were created, and their geometries were optimized. Depending on the VB site, various numbers of local chemical bonds (ranging from 0 to 4) are formed. Geometry-optimization trajectories are stored in the VASP `XDATCAR` files.
+- Use the script `vasp_structure_rattler_deformer.py` with `--max_strain 0.05` and `--max_amplitude 0.1` to generate `POSCAR` files from XDATCARs.
 - Perform single-shot DFT calculations (potentially with higher precision) for these structures, forming a database of **2180 structures**.
 
 #### 2. Ab-Initio Molecular Dynamics for Stable Defects
