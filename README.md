@@ -18,7 +18,7 @@ Density-functional theory (DFT) calculations were carried out with the [Vienna A
 #### 1. Boron Vacancy ($\rm{V}_{\rm{B}}$) Defects
 - **Lattice mismatch** results in 15 unique $\rm{V}_{\rm{B}}$ defects in the heterostrcuture's supercell.
 <div align="center">
-  <img src="fig1.png" alt="The hBN/SiC heterostructure. Unique $\rm{V}_{\rm{B}}$ sites are determined by red circles." width="400">
+  <img src="figures/fig1.png" alt="The hBN/SiC heterostructure. Unique $\rm{V}_{\rm{B}}$ sites are determined by red circles." width="400">
 </div>
 - To enrich the DB, all unique defects were created, and their geometries were optimized using [density functional theory](https://www.synopsys.com/glossary/what-is-density-functional-theory.html) implemented in VASP software.
 - Depending on the VB site, various numbers of local chemical bonds (ranging from 0 to 4) are formed.
