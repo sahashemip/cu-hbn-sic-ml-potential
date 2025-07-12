@@ -1,12 +1,11 @@
-## Defective hBN-SiC Heterostructure using VASP-NEP-GPUMD
+## Defective hBN/SiC Heterostructure using VASP-NEP-GPUMD
 
-This project provides a systematic guide for generating **machine learning interatomic potentials (MLIP)** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
+This project provides a guide for developing **machine learning interatomic potentials (MLIP)** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
 
 This developed potential can be used to 
 (i) assess the stability of the two-dimensional hBN/SiC heterostructure,
 (ii) elucidate **Si–N bond formation** triggered by a boron vacancy (\$\mathrm{V\_B}\$),
-and (iii) investigate the behaviour of an isolated Cu adatom on the resulting defective surface.
-The sections below describe how to (1) create robust, lightweight datasets and (2) run and analyze molecular-dynamics simulations.
+and (iii) investigate the behaviour of Cu adatoms on the defective hBN/SiC surface.
 
 ---
 
