@@ -24,10 +24,11 @@ Detailed instructions are provided for building a robust database (DB).
 Defects are introduced into a supercell containg 100 boron (B), 100 nitrogen (N), 64 silicon (Si), and 64 carbon (C) atoms.
 Detailed information on the geometries and structures used to construct a stable interatomic potential is provided below.
 
-#### 1. Boron Vacancy ($\rm{V}_{\rm{B}}$) Defects
+#### 1. Boron Vacancy (\$V_\mathrm{B}\$) Defects
 **Lattice mismatch** lead to 15 symmetry-distinct \$V_\mathrm{B}\$ defects in the heterostrcuture supercell, marked by the red circles in the figure. All unique defects were created, and their geometries were optimized. Depending on the VB site, various numbers of local chemical bonds (ranging from 0 to 4) are formed. Geometry-optimization trajectories are stored in the VASP `XDATCAR` files.
-- Use the script `src/vasp_structure_rattler_deformer.py` with `--max_strain 0.05`, `--max_amplitude 0.1`, and `--step_size 5` to generate `POSCAR` files from XDATCARs.
-- Perform single-shot DFT calculations (potentially with higher precision) for these structures, forming a database of **2180 structures**.
+The workflow then proceeds in two steps:
+- Use the script `src/vasp_structure_rattler_deformer.py` with `--max_strain=0.05`, `--max_amplitude=0.1`, and `--step_size=3` to generate `POSCAR` files from XDATCARs.
+- Perform single-shot DFT calculations (potentially with higher precision) for these structures, forming a database of **1090 structures**.
 
 #### 2. Ab-Initio Molecular Dynamics for Stable Defects
 - For the **most stable defect structure** (with 4 chemical bonds), ab-initio molecular dynamics (AIMD) simulations were conducted:
