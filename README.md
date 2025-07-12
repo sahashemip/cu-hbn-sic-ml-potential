@@ -34,8 +34,8 @@ The workflow then proceeds in two steps:
 - For the **most stable defect structure** (with 4 chemical bonds), ab-initio molecular dynamics (AIMD) simulations were conducted:
   - **Temperature:** 500 K
   - **Ensemble:** NVT
-  - **Duration:** 6000 steps
-- Using `--step_size=5`, we added 600 additional structures to the DB and performed DFT calculations for each of them.
+  - **Numer of steps:** 6000 steps
+- Using `--step_size=5`, `--max_strain=0.0`, and `--max_amplitude=0.0`, we added 600 additional structures to the DB and performed DFT calculations for each of them.
 
 #### 3. Pristine System
 - For the pristine system, **120 additional structures** (rattled and shifted) were added to the DB. The hBN layer shifts from (0,0) to (ax/2,ay/2); It is going to mimick layers sliding. ax=3.09 and ay=5.35 are the rectangular SiC lattice parameters.
