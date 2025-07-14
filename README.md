@@ -53,7 +53,7 @@ Note, the supercells used in this case are rectangular and contain the same numb
 
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
-- Using the updated database, a new NEP model was trained to enhance accuracy, and the process of `Data Enhancement via Iterative Model Refinement` will continue in a sequential manner by adding more Cu atoms.
+- Using the updated database, a new NEP model was trained to enhance accuracy, and the process of `Data Enhancement via Iterative Model Refinement` will continue in a sequential manner by adding more Cu atoms. The hBN/SiC surface hosts only one (\$V_\mathrm{B}\$) defect.
 
 ### How to Use `vasp_structure_rattler_deformer.py`
 
