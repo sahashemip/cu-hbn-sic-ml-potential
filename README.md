@@ -48,7 +48,7 @@ An initial NEP model was trained on the 2233 configurations described above. Usi
 Note, the supercells used in this case are rectangular and contain the same number of atoms as the original triangular cell.
 
 <table border="1"><tr><td>
-<strong>NOTE&nbsp;</strong>─ Using about 3100-ish data is enought to stud
+<strong>NOTE&nbsp;</strong>─ Next, we broaden the database to capture the nuanced anchoring of Cu adatoms on the hBN/SiC surface. What follows are the carefully crafted steps taken to enrich and deepen the database’s understanding.
 </td></tr></table>
 
 ### How to Use `vasp_structure_rattler_deformer.py`
