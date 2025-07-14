@@ -61,7 +61,7 @@ Note, the supercells used in this case are rectangular and contain the same numb
 <strong>NOTE&nbsp;</strong>─ Using the updated database, a new NEP model was trained to enhance accuracy, and the process of `Data Enhancement via Iterative Model Refinement` will continue in a sequential manner by adding more Cu atoms. The hBN/SiC surface migth host several Cu and $V_\mathrm{B}$ defect.
 </td></tr></table>
 
-- 
+#### 8. Data Enhancement via Iterative Model Refinement
 
 ### How to Use `vasp_structure_rattler_deformer.py`
 
