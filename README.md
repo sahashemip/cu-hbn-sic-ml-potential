@@ -62,16 +62,17 @@ Note, the supercells used in this case are rectangular and contain the same numb
 </td></tr></table>
 
 #### 8. Data Enhancement via Iterative Model Refinement
-- 1V<sub>B</sub> -- 1Cu
-- 1V<sub>B</sub> -- 2Cu
-- 1V<sub>B</sub> -- 3Cu
-- 2V<sub>B</sub> -- 1Cu
-- 2V<sub>B</sub> -- 2Cu
-- 1V<sub>B</sub> -- 4Cu
-- 1V<sub>B</sub> -- 5Cu
-- 1V<sub>B</sub> -- 6Cu
-- 1V<sub>B</sub> -- 7Cu
-- 4V<sub>B</sub> -- 9Cu
+
+- 1V<sub>B</sub> & 1Cu (108 strcutures)
+- 1V<sub>B</sub> & 2Cu (128 structures)
+- 1V<sub>B</sub> & 3Cu (106 structures)
+- 2V<sub>B</sub> & 1Cu (106 structures)
+- 2V<sub>B</sub> & 2Cu (75 structures)
+- 1V<sub>B</sub> & 4Cu (109 structures)
+- 1V<sub>B</sub> & 5Cu (92 structures)
+- 1V<sub>B</sub> & 6Cu (66 structures)
+- 1V<sub>B</sub> & 7Cu (17 structures)
+- 4V<sub>B</sub> & 9Cu (9 structures)
 
 
 
