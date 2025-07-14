@@ -4,7 +4,7 @@ This project provides a guide for developing **machine learning interatomic pote
 
 This developed potential can be used to 
 (i) assess the stability of the two-dimensional hBN/SiC heterostructure,
-(ii) elucidate **Si–N bond formation** triggered by a boron vacancy (\$V_\mathrm{B}\$),
+(ii) elucidate **Si–N bond formation** triggered by a boron vacancy (V<sub>B</sub>),
 and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC surface.
 
 ---
@@ -24,8 +24,8 @@ Detailed instructions are provided for building a robust database (DB).
 Defects are introduced into a supercell containg 100 boron (B), 100 nitrogen (N), 64 silicon (Si), and 64 carbon (C) atoms.
 Detailed information on the geometries and structures used to construct a stable interatomic potential is provided below.
 
-#### 1. Boron Vacancy (\$V_\mathrm{B}\$) Defects
-**Lattice mismatch** lead to 15 symmetry-distinct \$V_\mathrm{B}\$ defects in the heterostrcuture supercell, marked by the red circles in the figure. All unique defects were created, and their geometries were optimized. Depending on the VB site, various numbers of local chemical bonds (ranging from 0 to 4) are formed. Geometry-optimization (using ISIF=4) trajectories are stored in the VASP `XDATCAR` files.
+#### 1. Boron Vacancy (V<sub>B</sub>) Defects
+**Lattice mismatch** lead to 15 symmetry-distinct V<sub>B</sub> defects in the heterostrcuture supercell, marked by the red circles in the figure. All unique defects were created, and their geometries were optimized. Depending on the VB site, various numbers of local chemical bonds (ranging from 0 to 4) are formed. Geometry-optimization (using ISIF=4) trajectories are stored in the VASP `XDATCAR` files.
 The workflow then proceeds in two steps:
 - Use the script `src/vasp_structure_rattler_deformer.py` with `--max_strain=0.05`, `--max_amplitude=0.1`, and `--step_size=2` to generate `POSCAR` files from XDATCARs (forming a dataset of about **1113 structures**).
 - Perform single-shot DFT calculations (with higher precision) for these structures.
@@ -58,10 +58,24 @@ Note, the supercells used in this case are rectangular and contain the same numb
 - Copper atoms can be introduced into both interlayer bonded and non-bonded structures. To investigate the transition barrier, we explored the energy profile along a one-dimensional coordinate. A total of 21 structures, along with their rattled and deformed counterparts (42 structures in total), were added to the database.
 
 <table border="1"><tr><td>
-<strong>NOTE&nbsp;</strong>─ Using the updated database, a new NEP model was trained to enhance accuracy, and the process of `Data Enhancement via Iterative Model Refinement` will continue in a sequential manner by adding more Cu atoms. The hBN/SiC surface migth host several Cu and $V_\mathrm{B}$ defect.
+<strong>NOTE&nbsp;</strong>─ Using the updated database, a new NEP model was trained to enhance accuracy, and the process of `Data Enhancement via Iterative Model Refinement` will continue in a sequential manner by adding more Cu atoms. The hBN/SiC surface migth host several Cu and V<sub>B</sub> defect.
 </td></tr></table>
 
 #### 8. Data Enhancement via Iterative Model Refinement
+- 1V<sub>B</sub> -- 1Cu
+- 1V<sub>B</sub> -- 2Cu
+- 1V<sub>B</sub> -- 3Cu
+- 2V<sub>B</sub> -- 1Cu
+- 2V<sub>B</sub> -- 2Cu
+- 1V<sub>B</sub> -- 4Cu
+- 1V<sub>B</sub> -- 5Cu
+- 1V<sub>B</sub> -- 6Cu
+- 1V<sub>B</sub> -- 7Cu
+- 4V<sub>B</sub> -- 9Cu
+
+
+
+
 
 ### How to Use `vasp_structure_rattler_deformer.py`
 
