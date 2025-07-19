@@ -1,4 +1,4 @@
-# Defective hBN/SiC Heterostructure using VASP-NEP-GPUMD
+## `Defective hBN/SiC vdW Heterostructure using VASP-NEP-GPUMD`
 
 This project provides a guide for developing **machine learning interatomic potentials** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
 
