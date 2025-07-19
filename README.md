@@ -1,11 +1,8 @@
 # Defective hBN/SiC Heterostructure using VASP-NEP-GPUMD
 
-This project provides a guide for developing **machine learning interatomic potentials (MLIP)** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
+This project provides a guide for developing **machine learning interatomic potentials** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
 
-This developed potential can be used to 
-(i) assess the stability of the two-dimensional hBN/SiC heterostructure,
-(ii) elucidate **Si–N bond formation** triggered by a boron vacancy (V<sub>B</sub>),
-and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC surface.
+The developed potential can be used to (*i*) assess the stability of the two-dimensional hBN/SiC heterostructure, (*ii*) elucidate **Si–N interlayer bond formation** triggered by a boron vacancy (*V*<sub>B</sub>), and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC surface.
 
 ---
 
@@ -18,22 +15,28 @@ and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC s
     align="right"
   >
 </p>
-Detailed instructions are provided for building a robust database (DB).
+
+Detailed instructions are provided for building a robust database (DB) for neural evolution potential (NEP) developments.
 [Density-functional theory (DFT)](https://www.synopsys.com/glossary/what-is-density-functional-theory.html) calculations were performed with the [Vienna Ab-initio Simulation Package (VASP)](https://www.vasp.at/) to obtain the total energy, atomic forces, and virial stress for each geometry.
-Defects are introduced into a supercell containg 100 boron (B), 100 nitrogen (N), 64 silicon (Si), and 64 carbon (C) atoms.
-Detailed information on the geometries and structures used to construct a stable interatomic potential is provided below.
+Defects were introduced into a supercell containing 100 boron (B), 100 nitrogen (N), 64 silicon (Si), and 64 carbon (C) atoms.
+More specifically, *V*<sub>B</sub> and copper (Cu) adatoms serving as defects were incorporated into the structure.
+Detailed information on the geometries and structures is provided below.
 
 #### 1. Boron Vacancy (V<sub>B</sub>) Defects
-**Lattice mismatch** lead to 15 symmetry-distinct V<sub>B</sub> defects in the heterostrcuture supercell, marked by the red circles in the figure. All unique defects were created, and their geometries were optimized. Depending on the VB site, various numbers of local chemical bonds (ranging from 0 to 4) are formed. Geometry-optimization (using ISIF=4) trajectories are stored in the VASP `XDATCAR` files.
+**Lattice mismatch** lead to 15 symmetry-distinct V<sub>B</sub> defects in the heterostrcuture supercell, marked by the red circles in the figure.
+All unique defects were created, and their geometries were optimized.
+Depending on the *V*<sub>B</sub> site, various numbers of **local** interlayer chemical bonds (ranging from 0 to 4) are formed.
+Trajectories produced during geometry-optimization (using ISIF=4) are stored in the VASP `XDATCAR` files.
 The workflow then proceeds in two steps:
 - Use the script `src/vasp_structure_rattler_deformer.py` with `--max_strain=0.05`, `--max_amplitude=0.1`, and `--step_size=2` to generate `POSCAR` files from XDATCARs (forming a dataset of about **1113 structures**).
-- Perform single-shot DFT calculations (with higher precision) for these structures.
+- Perform single-shot DFT calculations, **with higher precision**, for these structures.
 
 #### 2. Ab-Initio Molecular Dynamics for Stable Defects
 - For the **most stable defect structure** (with 4 chemical bonds), ab-initio molecular dynamics (AIMD) simulations were conducted:
-  - **Temperature:** 500 K
+  - **Temperatures:** 300 K, 500 K, 700 K, and 900 K
   - **Ensemble:** NVT
   - **Numer of steps:** 6000 steps
+  - **VASP parameters:** ENCUT = 400 eV, EDIFF = 1E-4 eV, timestep = 0.5 fs 
 - Using `--step_size=5`, `--max_strain=0.0`, and `--max_amplitude=0.0`, we added 600 additional structures to the DB and performed DFT calculations for each of them.
 
 #### 3. Pristine System
@@ -74,9 +77,6 @@ Note, the supercells used in this case are rectangular and contain the same numb
 - 4V<sub>B</sub> & 9Cu (9 structures)
 
 
-
-
-
 ### How to Use `vasp_structure_rattler_deformer.py`
 
 The `vasp_structure_rattler_deformer.py` script generates strained and rattled `POSCAR` files from a VASP `XDATCAR`.
@@ -103,6 +103,11 @@ python vasp_structure_rattler_deformer.py \
 | `--number_of_rattling` | Number of rattle operations for each configuration. | `1`
 | `--vasp_file`  | Path to the VASP structure file. This argument is required. | `./XDATCAR`
 | `--output_dir` | Directory to store the generated POSCAR files. | `./poscars_db`
+
+
+## NEP Development
+
+## MLMD Simulations
 
 
 ### Repository Structure
