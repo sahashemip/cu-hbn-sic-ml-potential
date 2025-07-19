@@ -130,7 +130,9 @@ Representative defects and the resulting structures are listed below.
 <table border="1"><tr><td>
 <strong>NOTE&nbsp;</strong>─ The finalized dataset consists of 3,953 entries, of which 3,361 (85%) were used for training and 592 (15%) reserved for testing.
 </td></tr></table>
+
 ---
+
 ## Final NEP Quality
 
 
