@@ -146,7 +146,8 @@ The NEP model was trained using radial and angular cutoffs of 5 Å and 3.5 �
   – Force: 115 meV/Å
   – Virial: 10 meV/atom
 
-Calculations on systems of increasing complexity further confirm the model’s robust stability. More details can be found in the following figure.
+Dynamic simulations demonstrate the NEP model's stability under diverse conditions (see embedded videos for real-time trajectories).
+Detailed results, including trajectory snapshots and stability metrics, are presented in the figure below.
 
 <p align="center">
   <img src="figures/nep.png"
@@ -186,25 +187,9 @@ python vasp_structure_rattler_deformer.py \
 | `--vasp_file`  | Path to the VASP structure file. This argument is required. | `./XDATCAR`
 | `--output_dir` | Directory to store the generated POSCAR files. | `./poscars_db`
 
-
-
-
-
-### Repository Structure
-
-
 ### Citation
 If you use this workflow or data in your research, please cite the following:
-  - our paper ...
+  - Our paper ...
 
 ### License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-
-
-### How to Save and Use
-1. Copy the above content and save it to a file named `README.md` or another appropriate name in your repository.
-2. Place it in the root directory or the specific project folder.
-3. Rendered markdown will automatically be readable on GitHub or other markdown-compatible platforms.
-
-Let me know if you'd like to further customize it!
