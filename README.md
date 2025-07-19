@@ -9,6 +9,8 @@ and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC s
 
 ---
 
+## Database Compilation
+
 <p>
   <img src="figures/fig1.png"
     alt="The hBN/SiC heterostructure. Unique $\rm{V}_{\rm{B}}$ sites are determined by red circles."
@@ -16,9 +18,6 @@ and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC s
     align="right"
   >
 </p>
-
-## Database Compilation
-
 Detailed instructions are provided for building a robust database (DB).
 [Density-functional theory (DFT)](https://www.synopsys.com/glossary/what-is-density-functional-theory.html) calculations were performed with the [Vienna Ab-initio Simulation Package (VASP)](https://www.vasp.at/) to obtain the total energy, atomic forces, and virial stress for each geometry.
 Defects are introduced into a supercell containg 100 boron (B), 100 nitrogen (N), 64 silicon (Si), and 64 carbon (C) atoms.
