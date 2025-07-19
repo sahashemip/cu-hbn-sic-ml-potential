@@ -134,15 +134,28 @@ Representative defects and the resulting structures are listed below.
 ---
 
 ## Final NEP Quality
+The NEP model was trained using radial and angular cutoffs of 5 Å and 3.5 Å to represent the potential‐energy surface. A single hidden layer of 50 neurons yielded the following RMSEs:
 
-<p>
+* **Test set:**
+  – Energy: 2.0 meV/atom
+  – Force: 108 meV/Å
+  – Virial: 10 meV/atom
+
+* **Training set:**
+  – Energy: 1.8 meV/atom
+  – Force: 115 meV/Å
+  – Virial: 10 meV/atom
+
+Calculations on systems of increasing complexity further confirm the model’s robust stability. More details can be found in the following figure.
+
+<p align="center">
   <img src="figures/nep.png"
-    alt="Evolution of the NEP training process and model accuracy. (a–c) Log‑loss curves for energy, force, and virial, respectively, plotted against generation for both training (solid lines) and testing (dashed lines) data sets. (d–f) Correlation between NEP‑predicted and DFT reference values for energy, force, and virial on the training (circles) and testing (squares) sets; the dashed diagonal indicates perfect agreement, and RMSE values are reported in each legend.
-"
-    width="410"
-    align="right"
+    alt="Evolution of the NEP training process and model accuracy. (a–c) Log‑loss curves for energy, force, and virial, respectively, plotted against generation for both training (solid lines) and testing (dashed lines) data sets. (d–f) Correlation between NEP‑predicted and DFT reference values for energy, force, and virial on the training (circles) and testing (squares) sets; the dashed diagonal indicates perfect agreement, and RMSE values are reported in each legend."
+    width="800"
+    align="center"
   >
 </p>
+
 
 ---
 
