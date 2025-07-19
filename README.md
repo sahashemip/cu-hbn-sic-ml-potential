@@ -127,6 +127,9 @@ Representative defects and the resulting structures are listed below.
 - 1*V*<sub>B</sub> & 7Cu (17 structures)
 - 4*V*<sub>B</sub> & 9Cu (9 structures)
 
+<table border="1"><tr><td>
+<strong>NOTE&nbsp;</strong>─ The finalized dataset consists of 3,953 entries, of which 3,361 (85%) were used for training and 592 (15%) reserved for testing.
+</td></tr></table>
 ---
 ## Final NEP Quality
 
