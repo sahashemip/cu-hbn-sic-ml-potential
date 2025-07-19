@@ -53,6 +53,22 @@ Note, the supercells used in this case are rectangular and contain the same numb
 <strong>NOTE&nbsp;</strong>─ Next, we broaden the database to capture the nuanced anchoring of Cu adatoms on the hBN/SiC surface. What follows are the carefully crafted steps taken to enrich and deepen the database’s understanding.
 </td></tr></table>
 
+`The NEP was developed using the **nep** executable from the GPUMD package with the following input data:`
+```
+version      4
+model_type   0
+
+type         4 B N Si C
+
+cutoff       4.2 3.5
+n_max        4 4
+l_max        4 0 0
+
+neuron       30
+batch        100000
+generation   100000
+```
+
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
 
@@ -62,6 +78,22 @@ Note, the supercells used in this case are rectangular and contain the same numb
 <table border="1"><tr><td>
 <strong>NOTE&nbsp;</strong>─ Using the updated database, a new NEP model was trained to enhance accuracy, and the process of `Data Enhancement via Iterative Model Refinement` will continue in a sequential manner by adding more Cu atoms. The hBN/SiC surface migth host several Cu and V<sub>B</sub> defect.
 </td></tr></table>
+
+`The NEP was developed using the following input data:`
+```
+version      4
+model_type   0
+
+type         5 B N Si C Cu
+
+cutoff       4.2 3.5
+n_max        4 4
+l_max        4 0 0
+
+neuron       30
+batch        100000
+generation   100000
+```
 
 #### 8. Data Enhancement via Iterative Model Refinement
 
