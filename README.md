@@ -2,7 +2,7 @@
 
 This project provides a guide for developing **machine learning interatomic potentials** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
 
-The developed potential can be used to (*i*) assess the stability of the two-dimensional hBN/SiC heterostructure, (*ii*) elucidate **Si–N interlayer bond formation** triggered by a boron vacancy (*V*<sub>B</sub>), and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC surface.
+The developed potential can be used to (i) assess the stability of the two-dimensional hBN/SiC heterostructure, (ii) elucidate **Si–N interlayer bond formation** triggered by a boron vacancy (*V*<sub>B</sub>), and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC surface.
 
 ---
 
@@ -98,17 +98,19 @@ generation   200000
 Similarly, the RMSE values for energy and force reach below 0.003 eV/atom and 0.06 eV/Å, respectively.
 
 #### 8. Data Enhancement via Iterative Model Refinement
-
-- 1V<sub>B</sub> & 1Cu (108 strcutures)
-- 1V<sub>B</sub> & 2Cu (128 structures)
-- 1V<sub>B</sub> & 3Cu (106 structures)
-- 2V<sub>B</sub> & 1Cu (106 structures)
-- 2V<sub>B</sub> & 2Cu (75 structures)
-- 1V<sub>B</sub> & 4Cu (109 structures)
-- 1V<sub>B</sub> & 5Cu (92 structures)
-- 1V<sub>B</sub> & 6Cu (66 structures)
-- 1V<sub>B</sub> & 7Cu (17 structures)
-- 4V<sub>B</sub> & 9Cu (9 structures)
+The NEP was refined iteratively in separate stages, with additional data incorporated at each step.
+To select specific snapshots, we visualized the GPUMD‐generated `dump.xyz` trajectories and used `src/dump2poscar.py` to convert the chosen frames into POSCAR files.
+Representative defects and the resulting structures are listed below.
+- 1*V*<sub>B</sub> & 1Cu (108 strcutures)
+- 1*V*<sub>B</sub> & 2Cu (128 structures)
+- 1*V*<sub>B</sub> & 3Cu (106 structures)
+- 2*V*<sub>B</sub> & 1Cu (106 structures)
+- 2*V*<sub>B</sub> & 2Cu (75 structures)
+- 1*V*<sub>B</sub> & 4Cu (109 structures)
+- 1*V*<sub>B</sub> & 5Cu (92 structures)
+- 1*V*<sub>B</sub> & 6Cu (66 structures)
+- 1*V*<sub>B</sub> & 7Cu (17 structures)
+- 4*V*<sub>B</sub> & 9Cu (9 structures)
 
 
 ### How to Use `vasp_structure_rattler_deformer.py`
