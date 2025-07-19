@@ -69,6 +69,21 @@ batch        100000
 generation   200000
 ```
 The root-mean-square-error (RMSE) values for energy and force reach below 0.003 eV/atom and 0.06 eV/Å, respectively.
+The NEP potential was employed for machine learning MD (MLMD) simulations using the following `run.in' input:
+
+```
+potential  ./nep.txt
+velocity    300 
+
+time_step   0.5
+
+ensemble    nvt_ber 300 300 100
+dump_thermo 100
+dump_exyz   100 0 0
+run         1000000
+
+```
+To select specific snapshots, we visualized the GPUMD‐generated `dump.xyz` trajectories and used `src/dump2poscar.py` to convert the chosen frames into POSCAR files.
 
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
@@ -99,7 +114,6 @@ Similarly, the RMSE values for energy and force reach below 0.003 eV/atom and 0.
 
 #### 8. Data Enhancement via Iterative Model Refinement
 The NEP was refined iteratively in separate stages, with additional data incorporated at each step.
-To select specific snapshots, we visualized the GPUMD‐generated `dump.xyz` trajectories and used `src/dump2poscar.py` to convert the chosen frames into POSCAR files.
 Representative defects and the resulting structures are listed below.
 - 1*V*<sub>B</sub> & 1Cu (108 strcutures)
 - 1*V*<sub>B</sub> & 2Cu (128 structures)
