@@ -127,6 +127,11 @@ Representative defects and the resulting structures are listed below.
 - 1*V*<sub>B</sub> & 7Cu (17 structures)
 - 4*V*<sub>B</sub> & 9Cu (9 structures)
 
+---
+## Final NEP Quality
+
+
+---
 
 ### How to Use `vasp_structure_rattler_deformer.py`
 
@@ -156,9 +161,7 @@ python vasp_structure_rattler_deformer.py \
 | `--output_dir` | Directory to store the generated POSCAR files. | `./poscars_db`
 
 
-## NEP Development
 
-## MLMD Simulations
 
 
 ### Repository Structure
