@@ -152,7 +152,7 @@ Detailed results, including trajectory snapshots and stability metrics, are pres
 <p align="center">
   <img src="figures/nep.png"
     alt="Evolution of the NEP training process and model accuracy. (a–c) Log‑loss curves for energy, force, and virial, respectively, plotted against generation for both training (solid lines) and testing (dashed lines) data sets. (d–f) Correlation between NEP‑predicted and DFT reference values for energy, force, and virial on the training (circles) and testing (squares) sets; the dashed diagonal indicates perfect agreement, and RMSE values are reported in each legend."
-    width="800"
+    width="900"
     align="center"
   >
 </p>
