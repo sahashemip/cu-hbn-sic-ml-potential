@@ -66,8 +66,9 @@ l_max        4 0 0
 
 neuron       30
 batch        100000
-generation   100000
+generation   200000
 ```
+The root-mean-square-error (RMSE) values for energy and force reach below 0.003 eV/atom and 0.06 eV/Å, respectively.
 
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
@@ -92,8 +93,9 @@ l_max        4 0 0
 
 neuron       30
 batch        100000
-generation   100000
+generation   200000
 ```
+Similarly, the RMSE values for energy and force reach below 0.003 eV/atom and 0.06 eV/Å, respectively.
 
 #### 8. Data Enhancement via Iterative Model Refinement
 
