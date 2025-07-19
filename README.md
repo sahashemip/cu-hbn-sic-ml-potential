@@ -9,7 +9,7 @@ The developed potential can be used to (i) assess the stability of the two-dimen
 ## Database Compilation
 
 <p>
-  <img src="figures/fig1.png"
+  <img src="figures/model.png"
     alt="The hBN/SiC heterostructure. Unique $\rm{V}_{\rm{B}}$ sites are determined by red circles."
     width="410"
     align="right"
@@ -135,6 +135,14 @@ Representative defects and the resulting structures are listed below.
 
 ## Final NEP Quality
 
+<p>
+  <img src="figures/nep.png"
+    alt="Evolution of the NEP training process and model accuracy. (a–c) Log‑loss curves for energy, force, and virial, respectively, plotted against generation for both training (solid lines) and testing (dashed lines) data sets. (d–f) Correlation between NEP‑predicted and DFT reference values for energy, force, and virial on the training (circles) and testing (squares) sets; the dashed diagonal indicates perfect agreement, and RMSE values are reported in each legend.
+"
+    width="410"
+    align="right"
+  >
+</p>
 
 ---
 
