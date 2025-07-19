@@ -84,6 +84,7 @@ run         1000000
 
 ```
 To select specific snapshots, we visualized the GPUMD‐generated `dump.xyz` trajectories and used `src/dump2poscar.py` to convert the chosen frames into POSCAR files.
+Clearly, these POSCARs are used in DFT calculations to enhance DB quality.
 
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
