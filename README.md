@@ -1,6 +1,6 @@
 ## `Defective hBN/SiC vdW Heterostructure using VASP-NEP-GPUMD`
 
-This project provides a guide for developing **machine learning interatomic potentials** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/).
+This project provides a guide for developing **machine learning interatomic potentials** and conducting molecular dynamics (MD) simulations with [GPUMD software](https://gpumd.org/), for a prototypical bilayer heterostructure composed of hexagonal boron nitride (hBN) and silicon carbide (SiC).
 
 The developed potential can be used to (i) assess the stability of the two-dimensional hBN/SiC heterostructure, (ii) elucidate **Si–N interlayer bond formation** triggered by a boron vacancy (*V*<sub>B</sub>), and (iii) investigate the behaviour of **Cu adatoms** on the defective hBN/SiC surface.
 
@@ -37,7 +37,27 @@ The workflow then proceeds in two steps:
   - **Ensemble:** NVT
   - **Numer of steps:** 6000 steps
   - **VASP parameters:** ENCUT = 400 eV, EDIFF = 1E-4 eV, timestep = 0.5 fs 
-- Using `--step_size=5`, `--max_strain=0.0`, and `--max_amplitude=0.0`, we added 600 additional structures to the DB and performed DFT calculations for each of them.
+- Using `--step_size = 40`, `--max_strain=0.0`, and `--max_amplitude=0.0`, we added 600 additional structures to the DB and performed DFT calculations for each of them, but this time with higher accuracy. Below is the INCAR file for VASP calculations:
+  ```
+  PREC=Accurate
+  ENCUT=500
+  IBRION=-1
+  IVDW=12
+  EDIFF=1E-7
+  ISMEAR=0
+  SIGMA=0.01
+  LMAXMIX=4
+  NWRITE=1
+  GGA=PE
+  NCORE=16
+  ALGO = Normal
+  ISPIN=2
+  LASPH = .TRUE.
+  LWAVE=.FALSE.
+  LCHARG=.FALSE.
+  NELM=77
+  ```
+**`In some cases, SCF convergence can be challenging. For those systems, we recommend restarting the calculation from the WAVECAR files.`** This INCAR file was used for all data in the data sets.
 
 #### 3. Pristine System
 - For the pristine system, **120 additional structures** were generated through atomic rattling, in-plane layer shifting, and variations in interlayer distances, and subsequently added to the database. To mimic interlayer sliding, the hBN sheet was incrementally translated from (0, 0) to (ax/2, ay/2), where the rectangular SiC lattice parameters are ax = 3.09 Å and ay = 5.35 Å.
@@ -115,7 +135,7 @@ Similarly, the RMSE values for energy and force reach below 0.003 eV/atom and 0.
 
 #### 8. Data Enhancement via Iterative Model Refinement
 The NEP was refined iteratively in separate stages, with additional data incorporated at each step.
-Representative defects and the resulting structures are listed below.
+Representative defects and the resulting structures are listed below. In each example, the initial geometry is a pristine rectangular cell with a target boron vacancy and a Cu adatom. Running MLMD in the NVT ensemble then yields a variety of configurations. For instance, some Cu atoms may anchor at the vacancy and interlayer bonds may form.
 - 1*V*<sub>B</sub> & 1Cu (108 strcutures)
 - 1*V*<sub>B</sub> & 2Cu (128 structures)
 - 1*V*<sub>B</sub> & 3Cu (106 structures)
