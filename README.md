@@ -116,6 +116,13 @@ All structures were relaxed with the `Step 4` NEP potential and subsequently sub
 
 #### 7. Configurational Coordinates Transitioning from Bonded to Non-Bonded Defective Structures
 - Copper atoms can be introduced into both interlayer bonded and non-bonded structures. To investigate the transition barrier, we explored the energy profile along a one-dimensional coordinate. A total of 21 structures, along with their rattled and deformed counterparts (42 structures in total), were added to the database.
+  <p>
+  <img src="figures/confcoords.png"
+    alt="Energy profile of the structural transition from a bonded hBN-SiC configuration to a bonded structure in the presence of Cu metal."
+    width="410"
+    align="right"
+  >
+</p>
 
 <table border="1"><tr><td>
 <strong>NOTE&nbsp;</strong>─ Using the updated database, a new NEP model was trained to enhance accuracy, and the process of `Data Enhancement via Iterative Model Refinement` will continue in a sequential manner by adding more Cu atoms. The hBN/SiC surface migth host several Cu and V<sub>B</sub> defect.
