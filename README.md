@@ -167,17 +167,18 @@ Representative defects and the resulting structures are listed below. In each ex
 ---
 
 ## Final NEP Quality
-The NEP model was trained using radial and angular cutoffs of 5 Å and 3.5 Å to represent the potential‐energy surface. A single hidden layer of 50 neurons yielded the following RMSEs:
+The NEP model (`nep.txt`) was trained using radial and angular cutoffs of 5 Å and 3.5 Å to represent the potential‐energy surface.
+A single hidden layer of 50 neurons yielded the following RMSEs:
 
 * **Test set:**
-  – Energy: 2.0 meV/atom
-  – Force: 108 meV/Å
-  – Virial: 10 meV/atom
+  – Energy: 2.2 meV/atom
+  – Force: 123 meV/Å
+  – Virial: 9.4 meV/atom
 
 * **Training set:**
-  – Energy: 1.8 meV/atom
+  – Energy: 2.3 meV/atom
   – Force: 115 meV/Å
-  – Virial: 10 meV/atom
+  – Virial: 9.4 meV/atom
 
 Dynamic simulations demonstrate the NEP model's stability under diverse conditions (see embedded videos for real-time trajectories).
 Detailed results, including trajectory snapshots and stability metrics, are presented in the figure below.
