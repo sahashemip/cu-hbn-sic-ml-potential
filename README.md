@@ -108,7 +108,7 @@ Clearly, these POSCARs are used in DFT calculations to enhance DB quality.
 All structures were relaxed with the `Step 4` NEP potential and subsequently subjected to single‑point calculations using the same high‑precision settings described above.
 
 <table border="1"><tr><td>
-<strong>NOTE&nbsp;</strong>─ Next, we broaden the database to capture the nuanced anchoring of Cu adatoms on the hBN/SiC surface. What follows are the carefully crafted steps taken to enrich and deepen the database’s understanding.
+<strong>NOTE&nbsp;</strong>─ Next, we broaden the database to capture the nuanced anchoring of Cu adatoms to *V*<sub>B</sub> on the hBN/SiC surface.
 </td></tr></table>
 
 #### 6. AIMD simulations of Boron monovacancies
