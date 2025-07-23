@@ -63,7 +63,11 @@ The workflow then proceeds in two steps:
 - For the pristine system, **120 additional structures** were generated through atomic rattling, in-plane layer shifting, and variations in interlayer distances, and subsequently added to the database. To mimic interlayer sliding, the hBN sheet was incrementally translated from (0, 0) to (ax/2, ay/2), where the rectangular SiC lattice parameters are ax = 3.09 Å and ay = 5.35 Å.
 
 #### 4. Data Enhancement via Iterative Model Refinement
-An initial NEP model was trained on the 2233 configurations described above. Using this model, we performed GPUMD molecular dynamics simulations to identify configurations exhibiting non-physical behavior or other notable characteristics. These newly identified configurations were iteratively added to the database and used to retrain the potential, progressively enhancing its accuracy and stability. The MD simulations were conducted in the NPT ensemble (isothermal–isobaric) using the Berendsen barostat (P = 1 kbar). A range of temperatures from 200 K to 1000 K was explored during these calculations. In total, 901 new configurations were added to the DB, including pristine structures as well as mono- and tri-boron vacancies.
+An initial NEP model was trained on the 1833 configurations described above.
+Using this model, we performed GPUMD molecular dynamics simulations to identify configurations exhibiting non-physical behavior or other notable characteristics.
+These newly identified configurations were iteratively added to the database and used to retrain the potential, progressively enhancing its accuracy and stability.
+The MD simulations were conducted in the NPT ensemble (isothermal–isobaric) using the Berendsen barostat (P = 1 kbar).
+A range of temperatures from 200 K to 1000 K was explored during these calculations. In total, 901 new configurations were added to the DB, including pristine structures as well as mono-vacancies.
 Note, the supercells used in this case are rectangular and contain the same number of atoms as the original triangular cell.
 
 `The NEP was developed using the **nep** executable from the GPUMD package with the following input data:`
