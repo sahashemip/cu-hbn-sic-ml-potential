@@ -109,7 +109,7 @@ Clearly, these POSCARs are used in DFT calculations to enhance DB quality.
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
 
-#### 7. Configurational Coordinates Transitioning from Bonded to Non-Bonded Structures
+#### 7. Configurational Coordinates Transitioning from Bonded to Non-Bonded Defective Structures
 - Copper atoms can be introduced into both interlayer bonded and non-bonded structures. To investigate the transition barrier, we explored the energy profile along a one-dimensional coordinate. A total of 21 structures, along with their rattled and deformed counterparts (42 structures in total), were added to the database.
 
 <table border="1"><tr><td>
