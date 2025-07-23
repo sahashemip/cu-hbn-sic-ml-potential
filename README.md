@@ -111,7 +111,7 @@ All structures were relaxed with the `Step 4` NEP potential and subsequently sub
 <strong>NOTE&nbsp;</strong>─ Next, we broaden the database to capture the nuanced anchoring of Cu adatoms to *V*<sub>B</sub> on the hBN/SiC surface.
 </td></tr></table>
 
-#### 6. AIMD simulations of Boron monovacancies
+#### 6. AIMD Simulations of Distinct Monovacancy-Cu Coupling Configurations
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
 
 #### 7. Configurational Coordinates Transitioning from Bonded to Non-Bonded Defective Structures
