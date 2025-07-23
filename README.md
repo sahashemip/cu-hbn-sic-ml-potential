@@ -62,10 +62,7 @@ The workflow then proceeds in two steps:
 #### 3. Pristine System
 - For the pristine system, **120 additional structures** were generated through atomic rattling, in-plane layer shifting, and variations in interlayer distances, and subsequently added to the database. To mimic interlayer sliding, the hBN sheet was incrementally translated from (0, 0) to (ax/2, ay/2), where the rectangular SiC lattice parameters are ax = 3.09 Å and ay = 5.35 Å.
 
-#### 4. Di- and Tri-Boron Vacancy defects
-- To expand our DB with higher concentrations and random defect geometries, we generated unique defect configurations by randomly removing two and three boron vacancies. This dataset contributed 400 new entries to the DB.
-
-#### 5. Data Enhancement via Iterative Model Refinement
+#### 4. Data Enhancement via Iterative Model Refinement
 An initial NEP model was trained on the 2233 configurations described above. Using this model, we performed GPUMD molecular dynamics simulations to identify configurations exhibiting non-physical behavior or other notable characteristics. These newly identified configurations were iteratively added to the database and used to retrain the potential, progressively enhancing its accuracy and stability. The MD simulations were conducted in the NPT ensemble (isothermal–isobaric) using the Berendsen barostat (P = 1 kbar). A range of temperatures from 200 K to 1000 K was explored during these calculations. In total, 901 new configurations were added to the DB, including pristine structures as well as mono- and tri-boron vacancies.
 Note, the supercells used in this case are rectangular and contain the same number of atoms as the original triangular cell.
 
@@ -105,6 +102,10 @@ run         1000000
 ```
 To select specific snapshots, we visualized the GPUMD‐generated `dump.xyz` trajectories and used `src/dump2poscar.py` to convert the chosen frames into POSCAR files.
 Clearly, these POSCARs are used in DFT calculations to enhance DB quality.
+
+#### 5. Di- and Tri-Boron Vacancy defects
+- To expand our DB with higher concentrations and random defect geometries, we generated unique defect configurations by randomly removing two and three boron vacancies. This dataset contributed 400 new entries to the DB.
+All structures were relaxed with the `Step 4` NEP potential and subsequently subjected to single‑point calculations using the same high‑precision settings described above.
 
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
