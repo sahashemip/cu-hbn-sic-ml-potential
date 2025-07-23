@@ -66,10 +66,6 @@ The workflow then proceeds in two steps:
 An initial NEP model was trained on the 2233 configurations described above. Using this model, we performed GPUMD molecular dynamics simulations to identify configurations exhibiting non-physical behavior or other notable characteristics. These newly identified configurations were iteratively added to the database and used to retrain the potential, progressively enhancing its accuracy and stability. The MD simulations were conducted in the NPT ensemble (isothermal–isobaric) using the Berendsen barostat (P = 1 kbar). A range of temperatures from 200 K to 1000 K was explored during these calculations. In total, 901 new configurations were added to the DB, including pristine structures as well as mono- and tri-boron vacancies.
 Note, the supercells used in this case are rectangular and contain the same number of atoms as the original triangular cell.
 
-<table border="1"><tr><td>
-<strong>NOTE&nbsp;</strong>─ Next, we broaden the database to capture the nuanced anchoring of Cu adatoms on the hBN/SiC surface. What follows are the carefully crafted steps taken to enrich and deepen the database’s understanding.
-</td></tr></table>
-
 `The NEP was developed using the **nep** executable from the GPUMD package with the following input data:`
 ```
 version      4
@@ -106,6 +102,10 @@ Clearly, these POSCARs are used in DFT calculations to enhance DB quality.
 #### 5. Di- and Tri-Boron Vacancy defects
 - To expand our DB with higher concentrations and random defect geometries, we generated unique defect configurations by randomly removing two and three boron vacancies. This dataset contributed 400 new entries to the DB.
 All structures were relaxed with the `Step 4` NEP potential and subsequently subjected to single‑point calculations using the same high‑precision settings described above.
+
+<table border="1"><tr><td>
+<strong>NOTE&nbsp;</strong>─ Next, we broaden the database to capture the nuanced anchoring of Cu adatoms on the hBN/SiC surface. What follows are the carefully crafted steps taken to enrich and deepen the database’s understanding.
+</td></tr></table>
 
 #### 6. AIMD simulations of Boron monovacancies
 - For four energetically distinct defective hBN/SiC structures, resulted by various number of **N-Si bonds**, we performed AIMD simulations similar to `Step 2`. One structure was extracted every 300 steps, resulting in a total of 80 new configurations added to the database.
