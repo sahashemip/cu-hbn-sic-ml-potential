@@ -117,7 +117,7 @@ All structures were relaxed with the `Step 4` NEP potential and subsequently sub
 <p>
   <img src="figures/confcoords.png"
     alt="Energy profile of the structural transition from a bonded hBN-SiC configuration to a bonded structure in the presence of Cu metal."
-    width="200"
+    width="225"
     align="right"
   >
 </p>
